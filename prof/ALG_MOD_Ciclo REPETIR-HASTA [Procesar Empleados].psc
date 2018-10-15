@@ -23,11 +23,10 @@ Funcion Edad_Leida<-Func_Leer_Edad
 	Hasta Que Edad_Leida>=18
 FinFuncion
 
-Subproceso Inicializar_Variables(Cant_Emp_Fem_M50 Por Referencia,Cant_Emp_Masc Por Referencia,Cant_Emp Por Referencia,MenorEdad Por Referencia)
+Subproceso Inicializar_Variables(Cant_Emp_Fem_M50 Por Referencia,Cant_Emp_Masc Por Referencia,Cant_Emp Por Referencia)
 	Cant_Emp_Fem_M50=0
 	Cant_Emp_Masc=0
 	Cant_Emp=0
-	MenorEdad=100
 FinSubProceso
 
 Subproceso Leer_Datos_Emp(Nomb_Emp Por Referencia,Edad_Emp Por Referencia,Sexo_Emp  Por Referencia)
@@ -48,22 +47,20 @@ Subproceso Incrementar_Contadores(Edad_Emp,Sexo_Emp,Cant_Emp_Fem_M50 Por Referen
 	FinSi
 FinSubProceso
 
-Subproceso Mostrar_Resultados(Cant_Emp_Fem_M50,Cant_Emp_Masc,Cant_Emp,Emp_MasJoven)
+Subproceso Mostrar_Resultados(Cant_Emp_Fem_M50,Cant_Emp_Masc,Cant_Emp)
 	Limpiar Pantalla
 	Mostrar "----- RESULTADOS DEL PROCESAMIENTO -----"
 	Mostrar "Cantidad de féminas mayores de 50 años: " Cant_Emp_Fem_M50
 	Mostrar "Cantidad de empleados de sexo masculino: " Cant_Emp_Masc
 	Mostrar "Empleados procesados: " Cant_Emp 
-	Mostrar "El 1er empleado identificado con la menor edad fue: " Emp_MasJoven
-	
 FinSubProceso
 
 Algoritmo Procesar_Empleados
-	Inicializar_Variables(Cant_Emp_Fem_M50,Cant_Emp_Masc,Cant_Emp,MenorEdad)
+	Inicializar_Variables(Cant_Emp_Fem_M50,Cant_Emp_Masc,Cant_Emp)
 	Repetir
 		Leer_Datos_Emp(Nomb_Emp,Edad_Emp,Sexo_Emp)
 		Incrementar_Contadores(Edad_Emp,Sexo_Emp,Cant_Emp_Fem_M50,Cant_Emp_Masc,Cant_Emp)
 		Respuesta=Func_Leer_CarVal("¿Desea continuar procesando información (S/N)?","S","N")
 	Hasta Que Respuesta="N"
-	Mostrar_Resultados(Cant_Emp_Fem_M50,Cant_Emp_Masc,Cant_Emp,Emp_MasJoven)
+	Mostrar_Resultados(Cant_Emp_Fem_M50,Cant_Emp_Masc,Cant_Emp)
 FinAlgoritmo
