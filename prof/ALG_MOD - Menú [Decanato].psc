@@ -11,17 +11,6 @@ Algoritmo Decanato
 	Definir opc_menu Como Entero
 	
 	Repetir
-		Si opc_menu=1 o opc_menu=2  
-			entonces 
-				Limpiar Pantalla
-				Mostrar "Ultima opción seleccionada: " opc_menu
-		FinSi
-		Si opc_menu=3
-			entonces 
-				Mostrar "Presione cualquier tecla para volver al menú"
-				Esperar Tecla
-				Limpiar Pantalla
-		FinSi
 		Mostrar "MENU DE OPCIONES"
 		Mostrar "1. Ingresar datos"
 		Mostrar "2. Realizar calculos"
@@ -37,6 +26,17 @@ Algoritmo Decanato
 			De Otro Modo:
 				Mostrar "Debe ingresar una opción entre 1 y 4"
 		FinSegun
+		Si opc_menu=1 o opc_menu=2  
+			entonces 
+			Limpiar Pantalla
+			Mostrar "Ultima opción seleccionada: " opc_menu
+		FinSi
+		Si opc_menu=3
+			entonces 
+			Mostrar "Presione cualquier tecla para volver al menú"
+			Esperar Tecla
+			Limpiar Pantalla
+		FinSi
 	Hasta Que opc_menu=4
 	
 	
